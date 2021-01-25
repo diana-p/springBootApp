@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit advertisment"</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+<div class="container">
+    <h1>Editing ad</h1>
+    <div th:each="el : ${ad}">
+        <form method="post">
+            <input type="text" th:value="${el.lastName}" name="lastName" placeholder="Enter last name" class="form-control"><br>
+            <input type="text" th:value="${el.firstName}" name="firstName" placeholder="Enter first name" class="form-control"><br>
+            <textarea name="adFull" th:text="${el.text}" placeholder="Enter ad text" class="form-control"/><br>
+            <input type="text" th:value="${el.eMail}" name="email" placeholder="Enter email" class="form-control"><br>
+            <button type="submit" class="btn btn-success">edit</button>
+        </form>
+    </div>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
